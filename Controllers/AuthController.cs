@@ -16,7 +16,7 @@ namespace Datingapp.API.Controllers
 
         }
         [HttpPost("register")]
-        public async Task<IActionResult> Register(userForRegisterDto userdto)
+        public async Task<IActionResult> Register([FromBody]userForRegisterDto userdto)
         {
             //Validate request
 

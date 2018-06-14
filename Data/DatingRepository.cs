@@ -23,6 +23,12 @@ namespace Datingapp.API.Data
             _context.Remove(entity);
         }
 
+        public Task<Photo> getPhoto(int id)
+        {
+            var photo = _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
+            return photo;
+        }
+
         public async Task<User> getUser(int id)
         {
             var user = await _context.User.Include(p => p.Photos).FirstOrDefaultAsync(u => u.id == id);
